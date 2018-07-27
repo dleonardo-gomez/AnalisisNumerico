@@ -14,11 +14,22 @@ int main() {
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 	double lima,limb;
-	cout<<"Ecuación gm/c *(1-e^-((c/m)*t)) -v"<<endl;
+	cout<<"EcuaciC3n gm/c *(1-e^-((c/m)*t)) -v"<<endl;
 	m=61.8;
 	g=9.8;
 	t=10;
 	v=40;
+
+/*	
+	cout<<"Masa: ";
+	cin>>m;
+	cout<<"Gravedad: ";
+	cin>>g;
+	cout<<"Tiempo: ";
+	cin>>t;
+	cout<<"Velocidad: ";
+	cin>>v;
+*/	
 	
 	cout<<"Limite inferior: ";
 	cin>>lima;
@@ -49,6 +60,8 @@ vector<double> particionar3(double total, vector<double> res, double init,int cc
 	one = g*m/one *(1-exp(-1*(one/m)*t))-v;
 	two = g*m/two *(1-exp(-1*(two/m)*t))-v;
 	tre = g*m/tre *(1-exp(-1*(tre/m)*t))-v;
+	
+	cout<<"Interaccion #"<<cc<<endl;
 	
 	if(zer == 0){
 		res.push_back(init);
@@ -98,6 +111,7 @@ vector<double> particionar4(double total, vector<double> res, double init,int cc
 	tre = g*m/tre *(1-exp(-1*(tre/m)*t))-v;
 	fou = g*m/tre *(1-exp(-1*(fou/m)*t))-v;
 	
+	
 	if(zer == 0){
 		res.push_back(init);
 		return res;
@@ -122,24 +136,24 @@ vector<double> particionar4(double total, vector<double> res, double init,int cc
 	total = total/4;
 	if(cc<=20){
 		if(zer*one<0){
-		res = particionar4(total,res, zer,cc+1);
+		    res = particionar3(total,res, init,cc+1);
 		}if(one*two<0){
-			res = particionar4(total,res, one,cc+1);
+			res = particionar3(total,res, init+total,cc+1);
 		}if(two*tre<0){
-			res = particionar4(total,res, two,cc+1);
+			res = particionar3(total,res, init+total*2,cc+1);
 		}if(tre*fou<0){
-			res = particionar4(total,res, tre,cc+1);
+			res = particionar4(total,res, init+total*3,cc+1);
 		}
 	}
 	else{
 		if(zer*one<0){
-			res.push_back((one-zer)/2);
+			res.push_back((init+init+total)/2);
 		}if(one*two<0){
-			res.push_back((two-one)/2);
+			res.push_back((init+total+init+total*2)/2);
 		}if(two*tre<0){
-			res.push_back((tre-two)/2);
+			res.push_back((init+total*2+init+total*3)/2);
 		}if(tre*fou<0){
-			res.push_back((fou-tre)/2);
+			res.push_back((init+total*3+init+total*4)/2);
 		}
 	}
 	
