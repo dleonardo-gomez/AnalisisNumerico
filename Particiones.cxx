@@ -5,6 +5,7 @@
 using namespace std;
 
 vector<double> particionar3(double total, vector<double> res, double init, int cc);
+double cof3(double total, vector<double> res, double init);
 vector<double> particionar4(double total, vector<double> res, double init, int cc);
 
 double g,m,c,t,v;
@@ -46,14 +47,102 @@ int main() {
 	double total = limb-lima;
 
 	res = particionar3(total,res,lima, 0);
+	double divcof = cof3(total,res,lima);
 
     for(int i=0;i<res.size();i++)
-		cout<<(res[i]) <<endl;
+		cout<<"Resultado: "<<(res[i]) <<"\n Coef de divergencia = "<<divcof<<endl;
 	
 	return 0;
 }
 
+double cof3(double total, vector<double> res, double init){
+	
+	if(res.size()!=0){
+		double zer = init, one = init+(total/3), two = init+(total*2/3), bien;
+		
+		zer = bien-zer;
+		one = bien-one;
+		two = bien-two;
+		
+		total = total/3;
+		double err1,err2,coef;
+		if(zer<one && zer<two){
+			err1 = zer;
+			zer = init;
+			one = init+(total/3);
+			two = init+(total*2/3);
+			
+			zer = bien-zer;
+			one = bien-one;
+			two = bien-two;
+			
+			if(zer<one && zer<two){
+				err2=zer;
+			}
+			else if(one<zer && one<two){
+				err2 = one;
+			}
+			else{
+				err2=two;
+			}
+				
+		}else if(one<zer && one<two){
+			err1 = one;
+			init = init+total;
+			zer = init;
+			one = init+(total/3);
+			two = init+(total*2/3);
+			
+			zer = bien-zer;
+			one = bien-one;
+			two = bien-two;
+			
+			if(zer<one && zer<two){
+				err2=zer;
+			}
+			else if(one<zer && one<two){
+				err2 = one;
+			}
+			else{
+				err2=two;
+			}
+			
+		}else{
+			err1 = two;
+			init = init + total*2;
+			zer = init;
+			one = init+(total/3);
+			two = init+(total*2/3);
+			
+			zer = bien-zer;
+			one = bien-one;
+			two = bien-two;
+			
+			if(zer<one && zer<two){
+				err2=zer;
+			}
+			else if(one<zer && one<two){
+				err2 = one;
+			}
+			else{
+				err2=two;
+			}
+			
+		}
+		
+		coef = err1/err2;
+		
+		return coef;
+	}
+	else{
+		float x;
+		return x;
+	}
+}
+
+
 vector<double> particionar3(double total, vector<double> res, double init,int cc){
+	
 	double zer = init, one = init+(total/3), two = init+(total*2/3), tre = init+total;
 	
 	zer = g*m/zer *(1-exp(-1*(zer/m)*t))-v;
@@ -103,6 +192,7 @@ vector<double> particionar3(double total, vector<double> res, double init,int cc
 }
 
 vector<double> particionar4(double total, vector<double> res, double init,int cc){
+	
 	double zer = init, one = init+(total/4), two = init+(total*2/4), tre = init+(total*3/4), fou = init+total;
 	
 	zer = g*m/zer *(1-exp(-1*(zer/m)*t))-v;
