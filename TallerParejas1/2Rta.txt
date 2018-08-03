@@ -1,0 +1,11 @@
+1. El proceso de analisis del problema requiere más atención ya que con base en esto se puede solucinar el problema de la manera mas eficiente.
+
+2. Conocer el comportamiento del objeto/problema a solucionar, y como se puede expresar matemáticamente.
+
+3. Gasta mucho más tiempo y recursos, ademas puede que no se llegue a una respuesta y por tanto no cumplir el objetivo eficientemente.
+
+4. El error de truncamiento es más critico ya que causa una mayor indeterminación.
+
+5. La eficiencia y precisión del algoritmo, además de que la solución se puede aplicar para un grupo de problemas y no solo uno específico.
+
+6. Para saber que tan correcta es la solución dada por el algoritmo.
