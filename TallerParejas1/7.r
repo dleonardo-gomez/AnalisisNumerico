@@ -1,2 +1,7 @@
-t <- seq(-100,100,0.1)
-plot(2*cos(t), sin(t), main="Da Function", ylab="sin(x)")
+x <- c(1.40397689543,
+       1.32149751611,
+       1.32018047384,
+       1.32017994623,
+       1.32017994623)
+
+plot(x,main="Da Function")
