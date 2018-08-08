@@ -41,7 +41,7 @@ def main():
         print('Iteración #'+str(x)+': '+str(res[x]))
     
     for x in range(0,len(res)-1):
-        err.append(res[x]/res[x+1])
+        err.append(res[x+1]/res[x])
     
     
     for x in range(0,len(err)):
