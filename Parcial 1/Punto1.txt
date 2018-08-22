@@ -1,0 +1,1 @@
+La complejidad de este algoritmo es de O(n^2), y la cantidad de operaciones que realiza siempre va a ser (n*n)/2
