@@ -1,0 +1,16 @@
+
+Entrada: El algoritmo recibe un sistema de ecuaciones en forma de una matriz aumentada
+Ej:
+  Entran 3 ecuaciones condicionadas
+  x+2y+3z=5
+  2x+y+8z=7
+  4x+6y+8z=9
+  
+  Que ingresan como una matriz aumentada:
+  [[1,2,3,5],[2,1,8,7],[4,6,8,9]]
+  
+Salida: El algoritmo da una matriz aumentada resuelta, si es posible, con los valores que resuelven el sistema de ecuaciones
+  Se devuelve una matriz aumentada con una diagonal de unos:
+   [[1.0, 0.0, 0.0, -4.3125], [-0.0, 1.0, 0.0, 2.125], [-0.0, -0.0, 1.0, 1.6875]]
+  Que da la solucion al sistema con:
+    x = -4.3125 ; y = 2.125 ; z = 1.6875
