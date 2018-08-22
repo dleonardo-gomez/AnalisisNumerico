@@ -3,6 +3,7 @@ import math
 def interseccion(x0,x1,e):
     
     error = 1.0
+    contador = 0
     while(error > e):
         x2 = x1 - (diff(x1)/(diff(x1)-diff(x0)))*(x1-x0)
         if( diff(x2)*diff(x1) < 0):
@@ -12,10 +13,13 @@ def interseccion(x0,x1,e):
             x1 = x2
             x0 = x0
         error = abs((f(x2) - g(x2)))
+        contador += 1
         
+        
+        print("Iteracion: "+str(contador))
         print("Error: "+str(error))
-        print(g(x2))
-        print(f(x2))
+        print("g(x)= "+str(g(x2)))
+        print("f(x)= "+str(g(x2))+"\n")
    
     return 0, 0 
 
