@@ -1,1 +1,23 @@
 La complejidad de este algoritmo es de O(n^2), y la cantidad de operaciones que realiza siempre va a ser (n*n)/2
+
+  Impresiones por pantalla de las pruebas usando el algoritmo Punto1.py:
+  
+Prueba 1: 4x4
+la suma de la matriz superior triangular es:43
+la cantidad de operaciones es: 10
+
+Prueba 2: 4x4
+la suma de la matriz superior triangular es:468
+la cantidad de operaciones es: 10
+
+Prueba 3: 3x3
+la suma de la matriz superior triangular es:93
+la cantidad de operaciones es: 6
+
+Prueba 4: 3x3
+la suma de la matriz superior triangular es:93
+la cantidad de operaciones es: 6
+
+Prueba 5: 5x5
+la suma de la matriz superior triangular es:141
+la cantidad de operaciones es: 15
