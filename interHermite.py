@@ -1,4 +1,4 @@
-from sympy import *
+from sympy import sympify
 
 def interpolHermite(xPun,xVal,xDer):
     tabla = [[0 for x in range(len(xVal)*2)] for y in range(len(xVal)*2)]
