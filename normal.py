@@ -26,18 +26,22 @@ def reinmanZ(inicio, fin, pSize):
     return aprox
 
 #0-3 4 decimales
-
+print("0.0000 || ", end="")
 for i in range(0,10):
-  print("0.000" + str(i),end = " | ")
+  print("0.00" + str(i) + "0",end = " | ")
 
 print("\n")
 x = 0
+cont = 0
+print("0.0000 || ", end="")
 while x < 1:
-    cont = 0
     y = Decimal(reinmanZ(-10,x,0.001))
    
     print(round(y,4),end=" | ")
     cont += 1
-    if(cont%10 == 0):
-      print()
+    if(cont== 10):
+        max = Decimal(x+0.001)
+        print()
+        print(str(round(max,4))+" || ", end="")
+        cont = 0
     x += 0.001
